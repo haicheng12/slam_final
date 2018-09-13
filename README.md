@@ -56,7 +56,7 @@ Cartorgrapher:
 roslaunch test_slam cartorgrapher.launch
 ```
 
-navigation:
+Navigation:
 ------------
 
 I prepare three projects for navigation:
