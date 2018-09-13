@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="sanchi_amov"
+        name="imu"
+        type="sanchi_amov"
+        output="screen">
+    <param name="port" value="/dev/ttyUSB1"/>
+    <param name="baud" value="115200"/>
+    <param name="model" value="100S"/>
+  </node>
+
+  <!--remap from="/imu/data_raw" to="/imu_data"/-->
+</launch>

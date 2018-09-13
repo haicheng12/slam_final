@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <master auto="start"/>
+
+  <param name="/use_sim_time" value="false" />
+
+  <!-- Start the robot controller -->
+  <node name="base_controller_acc" pkg="test_slam" type="base_controller_acc" output="screen"/>
+
+  <!-- Run Linorobot compatible laser drivers -->
+  <include file="$(find test_slam)/launch/laser.launch" />
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(find test_slam)/maps/map.yaml"/>
+  <node pkg="map_server" name="map_server"  type="map_server" args="$(arg map_file)" />
+
+  <!-- Takes reference from env variable LINOBASE. ie. export LINOBASE=2wd -->
+  <include file="$(find test_slam)/launch/move_base_husky.launch" />
+
+  <!-- AMCL used for localization -->
+  <include file="$(find test_slam)/launch/husky/amcl.launch" >
+  </include> 
+
+</launch>
