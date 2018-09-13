@@ -10,8 +10,10 @@ git clone https://github.com/yujinrobot/yocs_msgs.git
 sudo apt-get install ros-kinetic-ar-track-alvar
 ```
 
+Virtual_sensor environment:
+-------------
+
 1.Add something useful to the standalone.launch file,and we only use yocs_vitrual_sensor:
-------------
 
 ```
 <launch>
@@ -33,7 +35,6 @@ sudo apt-get install ros-kinetic-ar-track-alvar
 ```
 
 2.Next and virtual_sensor to costmap.yaml file,we add another scan in it:
-------------
 
 ```
 obstacle_range: 2.5
