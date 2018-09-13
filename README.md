@@ -48,3 +48,30 @@ observation_sources: scan1 scan2
 scan1: {sensor_frame: base_link,  observation_persistence: 0.0, max_obstacle_height: 0.4, min_obstacle_height: 0.0, data_type: LaserScan, topic: /scan, marking: true, clearing: true}
 scan2: {sensor_frame: base_link,  observation_persistence: 0.0, max_obstacle_height: 0.4, min_obstacle_height: 0.0, data_type: LaserScan, topic: /virtual_sensor_scan, marking: true, clearing: false}
 ```
+
+Cartorgrapher:
+---------
+
+```
+roslaunch test_slam cartorgrapher.launch
+```
+
+navigation:
+------------
+
+I prepare three projects for navigation:
+
+- mrobot:
+```
+roslaunch test_slam navigate_mrobot.launch
+```
+
+- turtlebot3:
+```
+roslaunch test_slam navigate_turtlebot3.launch
+```
+
+- husky:
+```
+roslaunch test_slam navigate_husky.launch
+```
